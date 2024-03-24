@@ -6,6 +6,8 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
+import javax.annotation.Nonnull;
+
 public final class BlockRefractoryBrickSlab {
 
   public static class Double
@@ -20,6 +22,12 @@ public final class BlockRefractoryBrickSlab {
       this.setHardness(1.5f);
       this.setResistance(10);
       this.setHarvestLevel("pickaxe", 0);
+    }
+
+    @Nonnull
+    @Override
+    public String getTranslationKey(int meta) {
+      return NAME;
     }
 
     @Override
@@ -41,6 +49,12 @@ public final class BlockRefractoryBrickSlab {
       this.setHardness(1.5f);
       this.setResistance(5);
       this.setHarvestLevel("pickaxe", 0);
+    }
+
+    @Nonnull
+    @Override
+    public String getTranslationKey(int meta) {
+      return NAME;
     }
 
     @Override

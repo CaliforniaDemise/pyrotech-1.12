@@ -103,7 +103,6 @@ public class PluginJEI
       }
 
       List<IRecipe> vanillaRecipes = CraftingRecipeChecker.getValidRecipes(jeiHelpers)
-          .getKey()
           .stream()
           .filter(recipe -> {
             ResourceLocation resourceLocation = recipe.getRegistryName();

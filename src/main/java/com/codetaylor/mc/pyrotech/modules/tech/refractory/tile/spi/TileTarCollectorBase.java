@@ -230,7 +230,7 @@ public abstract class TileTarCollectorBase
       }
 
       if (iblockstate.getBlock() == Blocks.TNT) {
-        Blocks.TNT.onBlockDestroyedByPlayer(worldIn, pos, iblockstate.withProperty(BlockTNT.EXPLODE, Boolean.TRUE));
+        Blocks.TNT.onPlayerDestroy(worldIn, pos, iblockstate.withProperty(BlockTNT.EXPLODE, Boolean.TRUE));
       }
     }
 

@@ -83,7 +83,7 @@ public class ItemCog
       int stoneHopperTransferAmount = ModuleTechMachineConfig.STONE_HOPPER.getCogTransferAmount(registryName);
 
       if (stoneHopperTransferAmount > -1) {
-        String unlocalizedName = Item.getItemFromBlock(ModuleTechMachine.Blocks.STONE_HOPPER).getUnlocalizedName() + ".name";
+        String unlocalizedName = Item.getItemFromBlock(ModuleTechMachine.Blocks.STONE_HOPPER).getTranslationKey() + ".name";
         String localizedName = I18n.translateToLocal(unlocalizedName);
         tooltip.add(Reference.Tooltip.COLOR_EXTENDED_INFO + I18n.translateToLocalFormatted("gui.pyrotech.tooltip.cog.hopper", localizedName, Reference.Tooltip.COLOR_EXTENDED_INFO_HIGHLIGHT, stoneHopperTransferAmount));
       }
@@ -91,7 +91,7 @@ public class ItemCog
       double compactingBinRecipeProgress = ModuleTechMachineConfig.MECHANICAL_COMPACTING_BIN.getCogRecipeProgress(registryName);
 
       if (compactingBinRecipeProgress > -1) {
-        String unlocalizedName = Item.getItemFromBlock(ModuleTechMachine.Blocks.MECHANICAL_COMPACTING_BIN).getUnlocalizedName() + ".name";
+        String unlocalizedName = Item.getItemFromBlock(ModuleTechMachine.Blocks.MECHANICAL_COMPACTING_BIN).getTranslationKey() + ".name";
         String localizedName = I18n.translateToLocal(unlocalizedName);
         tooltip.add(Reference.Tooltip.COLOR_EXTENDED_INFO + I18n.translateToLocalFormatted("gui.pyrotech.tooltip.cog.compactor", localizedName, Reference.Tooltip.COLOR_EXTENDED_INFO_HIGHLIGHT, (int) (compactingBinRecipeProgress * 100)));
       }
@@ -101,7 +101,7 @@ public class ItemCog
       if (mulchSpreaderCogData[0] > -1) {
         int range = mulchSpreaderCogData[0] * 2 + 1;
         int attempts = mulchSpreaderCogData[1];
-        String unlocalizedName = Item.getItemFromBlock(ModuleTechMachine.Blocks.MECHANICAL_MULCH_SPREADER).getUnlocalizedName() + ".name";
+        String unlocalizedName = Item.getItemFromBlock(ModuleTechMachine.Blocks.MECHANICAL_MULCH_SPREADER).getTranslationKey() + ".name";
         String localizedName = I18n.translateToLocal(unlocalizedName);
         tooltip.add(Reference.Tooltip.COLOR_EXTENDED_INFO + I18n.translateToLocalFormatted("gui.pyrotech.tooltip.cog.spreader", localizedName, Reference.Tooltip.COLOR_EXTENDED_INFO_HIGHLIGHT, attempts, range, range));
       }

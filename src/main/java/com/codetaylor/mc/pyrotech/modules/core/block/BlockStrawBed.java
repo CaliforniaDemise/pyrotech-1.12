@@ -90,7 +90,7 @@ public class BlockStrawBed
 
   @Nonnull
   @Override
-  public EnumPushReaction getMobilityFlag(@Nonnull IBlockState state) {
+  public EnumPushReaction getPushReaction(@Nonnull IBlockState state) {
 
     return EnumPushReaction.DESTROY;
   }
@@ -277,7 +277,7 @@ public class BlockStrawBed
   @Override
   public IBlockState getStateFromMeta(int meta) {
 
-    EnumFacing enumfacing = EnumFacing.getHorizontal(meta);
+    EnumFacing enumfacing = EnumFacing.byHorizontalIndex(meta);
 
     if ((meta & 8) > 0) {
       return this.getDefaultState()

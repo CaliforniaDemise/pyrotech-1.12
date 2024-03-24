@@ -39,7 +39,7 @@ public class ItemMarshmallowStickEmpty
 
   @Nonnull
   @Override
-  public String getUnlocalizedName() {
+  public String getTranslationKey() {
 
     return "item.pyrotech.marshmallow.stick";
   }

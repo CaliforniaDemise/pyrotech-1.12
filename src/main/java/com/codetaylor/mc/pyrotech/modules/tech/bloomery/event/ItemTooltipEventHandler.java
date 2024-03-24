@@ -39,14 +39,14 @@ public class ItemTooltipEventHandler {
       TooltipHelper.addTooltip(tooltip, TextFormatting.GOLD + I18n.translateToLocal("gui.pyrotech.tooltip.burn.time.efficiency"), 1);
 
       if (hasBloomeryModifier) {
-        String unlocalizedName = Item.getItemFromBlock(ModuleTechBloomery.Blocks.BLOOMERY).getUnlocalizedName() + ".name";
+        String unlocalizedName = Item.getItemFromBlock(ModuleTechBloomery.Blocks.BLOOMERY).getTranslationKey() + ".name";
         String localizedName = I18n.translateToLocal(unlocalizedName);
         String text = TextFormatting.GOLD + " " + I18n.translateToLocalFormatted("gui.pyrotech.tooltip.burn.time.modifier", localizedName, TextFormatting.YELLOW, ((int) (bloomeryModifier * 100)));
         TooltipHelper.addTooltip(tooltip, text, 2);
       }
 
       if (hasWitherForgeModifier) {
-        String unlocalizedName = Item.getItemFromBlock(ModuleTechBloomery.Blocks.WITHER_FORGE).getUnlocalizedName() + ".name";
+        String unlocalizedName = Item.getItemFromBlock(ModuleTechBloomery.Blocks.WITHER_FORGE).getTranslationKey() + ".name";
         String localizedName = I18n.translateToLocal(unlocalizedName);
         String text = TextFormatting.GOLD + " " + I18n.translateToLocalFormatted("gui.pyrotech.tooltip.burn.time.modifier", localizedName, TextFormatting.YELLOW, ((int) (witherForgeModifier * 100)));
         TooltipHelper.addTooltip(tooltip, text, (hasBloomeryModifier ? 3 : 2));

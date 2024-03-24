@@ -35,7 +35,7 @@ public class ModBulkRenderItemSupplier
     for (ResourceLocation resourceLocation : Item.REGISTRY.getKeys()) {
 
       if (resourceLocation != null
-          && this.modId.equals(resourceLocation.getResourceDomain())) {
+          && this.modId.equals(resourceLocation.getNamespace())) {
 
         NonNullList<ItemStack> results = NonNullList.create();
         Item item = Item.REGISTRY.getObject(resourceLocation);

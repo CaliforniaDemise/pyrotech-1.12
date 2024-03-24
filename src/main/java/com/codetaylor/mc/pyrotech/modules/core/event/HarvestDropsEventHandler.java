@@ -43,7 +43,7 @@ public class HarvestDropsEventHandler {
         if (registryName != null) {
           ModuleCore.LOGGER.error(String.format(
               "A mod [%s] threw an exception when calling getItem on a block [%s]",
-              registryName.getResourceDomain(),
+              registryName.getNamespace(),
               registryName
           ), e);
         }

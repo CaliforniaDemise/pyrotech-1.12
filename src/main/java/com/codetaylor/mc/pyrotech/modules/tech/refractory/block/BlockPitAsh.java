@@ -83,14 +83,14 @@ public class BlockPitAsh
   // Allowed to return null.
   @SuppressWarnings("NullableProblems")
   @Override
-  public CreativeTabs getCreativeTabToDisplayOn() {
+  public CreativeTabs getCreativeTab() {
 
     return null;
   }
 
   @Nonnull
   @Override
-  public String getUnlocalizedName() {
+  public String getTranslationKey() {
 
     return "tile.pyrotech.pile_ash";
   }

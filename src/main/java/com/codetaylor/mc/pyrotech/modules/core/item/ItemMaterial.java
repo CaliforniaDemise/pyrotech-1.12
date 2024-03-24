@@ -63,7 +63,7 @@ public class ItemMaterial
 
   @Nonnull
   @Override
-  public String getUnlocalizedName(ItemStack stack) {
+  public String getTranslationKey(ItemStack stack) {
 
     String name = EnumType.fromMeta(stack.getMetadata()).getName().replaceAll("_", ".");
     return "item." + ModuleCore.MOD_ID + "." + name;

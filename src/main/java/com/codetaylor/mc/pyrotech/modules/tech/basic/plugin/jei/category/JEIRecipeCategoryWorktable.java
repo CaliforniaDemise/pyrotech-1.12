@@ -139,12 +139,12 @@ public class JEIRecipeCategoryWorktable
         guiItemStacks.addTooltipCallback((slotIndex, input, ingredient, tooltip) -> {
 
           if (slotIndex == CRAFT_OUTPUT_SLOT_INDEX) {
-            String recipeModId = registryName.getResourceDomain();
+            String recipeModId = registryName.getNamespace();
             boolean modIdDifferent = false;
             ResourceLocation itemRegistryName = ingredient.getItem().getRegistryName();
 
             if (itemRegistryName != null) {
-              String itemModId = itemRegistryName.getResourceDomain();
+              String itemModId = itemRegistryName.getNamespace();
               modIdDifferent = !recipeModId.equals(itemModId);
             }
 

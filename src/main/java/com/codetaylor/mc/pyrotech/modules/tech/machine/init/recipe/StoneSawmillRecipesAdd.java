@@ -63,7 +63,7 @@ public class StoneSawmillRecipesAdd {
 
         StoneSawmillRecipesAdd.registerSawmillRecipeWood(
             toRegistry,
-            "chopping_block/" + registryName.getResourcePath(),
+            "chopping_block/" + registryName.getPath(),
             recipe.getOutput(),
             recipe.getInput(),
             ModuleTechMachineConfig.STONE_SAWMILL.INHERITED_CHOPPING_BLOCK_RECIPE_DURATION_MODIFIER

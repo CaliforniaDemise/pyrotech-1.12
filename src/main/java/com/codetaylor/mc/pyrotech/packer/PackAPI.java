@@ -23,13 +23,13 @@ public final class PackAPI {
 
   public static PackedData.ImageData getImageData(ResourceLocation resourceLocation) {
 
-    PackedData packedData = PACKED_DATA_MAP.get(resourceLocation.getResourceDomain());
+    PackedData packedData = PACKED_DATA_MAP.get(resourceLocation.getNamespace());
 
     if (packedData == null) {
       throw new RuntimeException("Missing packed data for: " + resourceLocation);
     }
 
-    PackedData.ImageData imageData = packedData.image.get(resourceLocation.getResourcePath());
+    PackedData.ImageData imageData = packedData.image.get(resourceLocation.getPath());
 
     if (imageData == null) {
       throw new RuntimeException("Missing packed image data for: " + resourceLocation);
@@ -40,13 +40,13 @@ public final class PackAPI {
 
   public static PackedData.AtlasData getAtlasData(ResourceLocation resourceLocation) {
 
-    PackedData packedData = PACKED_DATA_MAP.get(resourceLocation.getResourceDomain());
+    PackedData packedData = PACKED_DATA_MAP.get(resourceLocation.getNamespace());
 
     if (packedData == null) {
       throw new RuntimeException("Missing packed data for: " + resourceLocation);
     }
 
-    PackedData.AtlasData atlasData = packedData.atlas.get(resourceLocation.getResourcePath());
+    PackedData.AtlasData atlasData = packedData.atlas.get(resourceLocation.getPath());
 
     if (atlasData == null) {
       throw new RuntimeException("Missing atlas data for: " + resourceLocation);
@@ -62,8 +62,8 @@ public final class PackAPI {
    */
   public static void register(ResourceLocation resourceLocation, Supplier<Optional<InputStream>> streamSupplier) {
 
-    if (PACKED_DATA_MAP.get(resourceLocation.getResourceDomain()) != null) {
-      throw new RuntimeException("Duplicate packed.json registered for: " + resourceLocation.getResourceDomain());
+    if (PACKED_DATA_MAP.get(resourceLocation.getNamespace()) != null) {
+      throw new RuntimeException("Duplicate packed.json registered for: " + resourceLocation.getNamespace());
     }
 
     Optional<InputStream> optionalInputStream = streamSupplier.get();
@@ -89,7 +89,7 @@ public final class PackAPI {
       PackedData packedData = new Gson().fromJson(inputStreamReader, PackedData.class);
       inputStreamReader.close();
 
-      PACKED_DATA_MAP.put(resourceLocation.getResourceDomain(), packedData);
+      PACKED_DATA_MAP.put(resourceLocation.getNamespace(), packedData);
 
     } catch (Exception e) {
       LOGGER.error("Error loading packed data for " + resourceLocation, e);

@@ -12,7 +12,6 @@ import com.codetaylor.mc.pyrotech.modules.tool.client.render.TEISRShield;
 import com.codetaylor.mc.pyrotech.modules.tool.item.*;
 import com.codetaylor.mc.pyrotech.modules.tool.item.spi.*;
 import com.google.common.base.Preconditions;
-import net.darkhax.bookshelf.lib.ModTrackingList;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;

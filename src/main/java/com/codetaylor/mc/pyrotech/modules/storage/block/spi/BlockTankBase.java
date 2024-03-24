@@ -261,7 +261,7 @@ public abstract class BlockTankBase
 
   @Nonnull
   @Override
-  public BlockRenderLayer getBlockLayer() {
+  public BlockRenderLayer getRenderLayer() {
 
     return BlockRenderLayer.SOLID;
   }

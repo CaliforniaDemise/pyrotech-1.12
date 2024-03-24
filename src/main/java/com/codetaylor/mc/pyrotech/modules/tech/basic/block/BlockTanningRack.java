@@ -117,7 +117,7 @@ public class BlockTanningRack
 
   @Nonnull
   @Override
-  public BlockRenderLayer getBlockLayer() {
+  public BlockRenderLayer getRenderLayer() {
 
     return BlockRenderLayer.CUTOUT;
   }

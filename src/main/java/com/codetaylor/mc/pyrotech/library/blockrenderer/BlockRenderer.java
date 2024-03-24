@@ -217,7 +217,7 @@ public class BlockRenderer {
         // This code is copied from the tooltip renderer, so we can properly center it.
         for (int i = 0; i < list.size(); ++i) {
           if (i == 0) {
-            list.set(i, is.getRarity().rarityColor + list.get(i));
+            list.set(i, is.getRarity().color + list.get(i));
           } else {
             list.set(i, TextFormatting.GRAY + list.get(i));
           }

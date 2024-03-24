@@ -91,8 +91,8 @@ public class CompostBinRecipe
       throw new NullPointerException(String.format("Item %s is missing a resource location", itemStack.toString()));
     }
 
-    String domain = resourceLocation.getResourceDomain().toLowerCase();
-    String path = resourceLocation.getResourcePath().toLowerCase();
+    String domain = resourceLocation.getNamespace().toLowerCase();
+    String path = resourceLocation.getPath().toLowerCase();
     return new ResourceLocation(resourceDomain, domain + "_" + path + "_" + meta);
   }
 

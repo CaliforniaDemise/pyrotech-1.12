@@ -83,9 +83,9 @@ public abstract class BlockSlab
 
   @Nonnull
   @Override
-  public String getUnlocalizedName(int meta) {
+  public String getTranslationKey(int meta) {
 
-    return super.getUnlocalizedName();
+    return super.getTranslationKey();
   }
 
   @Nonnull

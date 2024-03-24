@@ -32,7 +32,7 @@ public class PackedImageComponent
 
     ResourceLocation resourceLocation = new ResourceLocation(this.image);
     this.imageData = PackAPI.getImageData(resourceLocation);
-    String resourceDomain = resourceLocation.getResourceDomain();
+    String resourceDomain = resourceLocation.getNamespace();
     this.atlasResourceLocation = new ResourceLocation(resourceDomain, this.imageData.atlas);
     this.atlasData = PackAPI.getAtlasData(this.atlasResourceLocation);
 

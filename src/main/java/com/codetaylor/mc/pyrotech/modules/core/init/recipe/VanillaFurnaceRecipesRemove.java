@@ -35,8 +35,8 @@ public class VanillaFurnaceRecipesRemove {
             continue;
           }
 
-          if (registryName.getResourceDomain().equals(parse.getDomain())
-              && registryName.getResourcePath().equals(parse.getPath())
+          if (registryName.getNamespace().equals(parse.getDomain())
+              && registryName.getPath().equals(parse.getPath())
               && itemStack.getMetadata() == parse.getMeta()) {
             it.remove();
           }

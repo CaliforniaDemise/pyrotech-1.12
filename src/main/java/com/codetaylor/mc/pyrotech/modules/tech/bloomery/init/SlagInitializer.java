@@ -230,7 +230,7 @@ public final class SlagInitializer {
   private static void registerItem(Item item, ResourceLocation registryName, String unlocalizedName) {
 
     item.setRegistryName(registryName);
-    item.setUnlocalizedName(unlocalizedName);
+    item.setTranslationKey(unlocalizedName);
     item.setCreativeTab(ModuleTechBloomery.CREATIVE_TAB);
     ForgeRegistries.ITEMS.register(item);
   }
@@ -238,7 +238,7 @@ public final class SlagInitializer {
   private static void registerBlock(Block block, ResourceLocation registryName, String unlocalizedName) {
 
     block.setRegistryName(registryName);
-    block.setUnlocalizedName(unlocalizedName);
+    block.setTranslationKey(unlocalizedName);
     block.setCreativeTab(ModuleTechBloomery.CREATIVE_TAB);
     ForgeRegistries.BLOCKS.register(block);
   }

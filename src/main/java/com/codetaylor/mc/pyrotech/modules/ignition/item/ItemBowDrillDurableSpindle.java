@@ -37,16 +37,16 @@ public class ItemBowDrillDurableSpindle
 
   @Nonnull
   @Override
-  public String getUnlocalizedName() {
+  public String getTranslationKey() {
 
     return "item.pyrotech.bow.drill.durable";
   }
 
   @Nonnull
   @Override
-  public String getUnlocalizedName(@Nonnull ItemStack stack) {
+  public String getTranslationKey(@Nonnull ItemStack stack) {
 
-    return this.getUnlocalizedName();
+    return this.getTranslationKey();
   }
 
   @ParametersAreNonnullByDefault

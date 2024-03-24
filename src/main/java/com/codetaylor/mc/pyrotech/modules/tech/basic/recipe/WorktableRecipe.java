@@ -177,7 +177,7 @@ public class WorktableRecipe
 
   public static boolean isBlacklisted(ResourceLocation resourceLocation) {
 
-    return (BLACKLIST_ALL && !"crafttweaker".equals(resourceLocation.getResourceDomain()))
+    return (BLACKLIST_ALL && !"crafttweaker".equals(resourceLocation.getNamespace()))
         || WorktableRecipe.matchesResourceLocation(resourceLocation, BLACKLIST)
         || WorktableRecipe.matchesResourceLocation(resourceLocation, ModuleTechBasicConfig.WORKTABLE_COMMON.RECIPE_BLACKLIST);
   }
@@ -197,7 +197,7 @@ public class WorktableRecipe
       if (configString.endsWith("*")) {
         String[] split = configString.split(":");
 
-        if (split[0].equals(resourceLocation.getResourceDomain())) {
+        if (split[0].equals(resourceLocation.getNamespace())) {
           return true;
         }
 
@@ -212,8 +212,8 @@ public class WorktableRecipe
 
     for (ResourceLocation blacklistLocation : set) {
 
-      if ("*".equals(blacklistLocation.getResourcePath())
-          && resourceLocation.getResourceDomain().equals(blacklistLocation.getResourceDomain())) {
+      if ("*".equals(blacklistLocation.getPath())
+          && resourceLocation.getNamespace().equals(blacklistLocation.getNamespace())) {
         return true;
 
       } else if (resourceLocation.equals(blacklistLocation)) {

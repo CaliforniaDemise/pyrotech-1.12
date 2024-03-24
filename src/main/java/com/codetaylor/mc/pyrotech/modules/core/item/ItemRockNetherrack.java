@@ -21,7 +21,7 @@ public class ItemRockNetherrack
 
   @Nonnull
   @Override
-  public String getUnlocalizedName(@Nonnull ItemStack stack) {
+  public String getTranslationKey(@Nonnull ItemStack stack) {
 
     return "tile." + ModuleCore.MOD_ID + ".rock_netherrack";
   }

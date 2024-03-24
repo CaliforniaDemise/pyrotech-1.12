@@ -69,8 +69,8 @@ public final class CompatInitializerOre {
           continue;
         }
 
-        String unlocalizedName = registryName.getResourceDomain() + ":"
-            + item.getUnlocalizedName(itemStack);
+        String unlocalizedName = registryName.getNamespace() + ":"
+            + item.getTranslationKey(itemStack);
 
         if (unlocalizedName.endsWith(".name")) {
           unlocalizedName = unlocalizedName.substring(0, unlocalizedName.length() - 5);
@@ -93,8 +93,8 @@ public final class CompatInitializerOre {
           continue;
         }
 
-        String itemString = registryName.getResourceDomain() + ":"
-            + registryName.getResourcePath() + ":" + itemStack.getMetadata();
+        String itemString = registryName.getNamespace() + ":"
+            + registryName.getPath() + ":" + itemStack.getMetadata();
         nuggetItemStrings.add(itemString);
       }
 

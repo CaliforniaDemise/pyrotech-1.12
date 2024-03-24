@@ -3,7 +3,6 @@ package com.codetaylor.mc.pyrotech.modules.core.command;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.command.CommandBase;
-import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
@@ -40,7 +39,7 @@ public class ClientCommandLang
   }
 
   @Override
-  public void execute(@Nonnull MinecraftServer server, @Nonnull ICommandSender sender, @Nonnull String[] args) throws CommandException {
+  public void execute(@Nonnull MinecraftServer server, @Nonnull ICommandSender sender, @Nonnull String[] args) {
 
     Minecraft minecraft = Minecraft.getMinecraft();
     EntityPlayerSP player = minecraft.player;
@@ -48,7 +47,7 @@ public class ClientCommandLang
     ItemStack heldItemMainhand = player.getHeldItemMainhand();
 
     if (!heldItemMainhand.isEmpty()) {
-      String unlocalizedName = heldItemMainhand.getUnlocalizedName();
+      String unlocalizedName = heldItemMainhand.getTranslationKey();
       sender.sendMessage(new TextComponentString(unlocalizedName));
 
       StringSelection contents = new StringSelection(unlocalizedName);

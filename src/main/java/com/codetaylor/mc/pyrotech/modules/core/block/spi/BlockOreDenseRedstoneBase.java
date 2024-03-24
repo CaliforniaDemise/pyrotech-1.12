@@ -47,7 +47,7 @@ public abstract class BlockOreDenseRedstoneBase
   }
 
   @Override
-  public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+  public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 
     this.activate(world, pos);
   }
@@ -135,9 +135,9 @@ public abstract class BlockOreDenseRedstoneBase
   }
 
   @Override
-  public CreativeTabs getCreativeTabToDisplayOn() {
+  public CreativeTabs getCreativeTab() {
 
-    return this.activated ? super.getCreativeTabToDisplayOn() : null;
+    return this.activated ? super.getCreativeTab() : null;
   }
 
   @Override

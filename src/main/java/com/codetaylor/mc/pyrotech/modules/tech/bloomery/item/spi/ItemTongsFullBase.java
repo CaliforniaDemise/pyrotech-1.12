@@ -144,7 +144,7 @@ public abstract class ItemTongsFullBase
         //noinspection deprecation
         String translatedLangKey = I18n.translateToLocal(langKey);
         //noinspection deprecation
-        String translatedTooltip = I18n.translateToLocalFormatted(ModuleTechBloomery.Blocks.BLOOM.getUnlocalizedName() + ".unique.name", translatedLangKey).trim();
+        String translatedTooltip = I18n.translateToLocalFormatted(ModuleTechBloomery.Blocks.BLOOM.getTranslationKey() + ".unique.name", translatedLangKey).trim();
 
         if (tooltip.size() > 1) {
           tooltip.add(1, TextFormatting.DARK_RED + translatedTooltip + TextFormatting.RESET);

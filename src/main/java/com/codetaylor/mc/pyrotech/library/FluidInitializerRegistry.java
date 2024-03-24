@@ -118,7 +118,7 @@ public class FluidInitializerRegistry {
       for (final IFluidBlock fluidBlock : this.modFluidBlockList) {
         Block block = (Block) fluidBlock;
         block.setRegistryName(this.modId, "fluid." + fluidBlock.getFluid().getName());
-        block.setUnlocalizedName(fluidBlock.getFluid().getUnlocalizedName());
+        block.setTranslationKey(fluidBlock.getFluid().getUnlocalizedName());
         block.setCreativeTab(this.creativeTab);
         registry.register(block);
       }

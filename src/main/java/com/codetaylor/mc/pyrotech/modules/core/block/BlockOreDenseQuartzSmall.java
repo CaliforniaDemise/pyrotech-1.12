@@ -34,7 +34,7 @@ public class BlockOreDenseQuartzSmall
   }
 
   @Override
-  public String getUnlocalizedName() {
+  public String getTranslationKey() {
 
     return "tile.pyrotech.dense_quartz_ore";
   }

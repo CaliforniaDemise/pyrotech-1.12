@@ -58,7 +58,7 @@ public class ModPyrotech {
   public static final CreativeTabs CREATIVE_TAB = new CreativeTabs(MOD_ID) {
 
     @Override
-    public ItemStack getTabIconItem() {
+    public ItemStack createIcon() {
 
       if (INSTANCE.isModuleEnabled(ModuleTechBasic.class)) {
         return new ItemStack(ModuleTechBasic.Blocks.CAMPFIRE, 1, 0);

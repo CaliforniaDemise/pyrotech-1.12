@@ -18,7 +18,7 @@ public class BlockOreDenseQuartzRocks
   private static final AxisAlignedBB AABB = new AxisAlignedBB(0, 0, 0, 1, 0.0625, 1);
 
   @Override
-  public String getUnlocalizedName() {
+  public String getTranslationKey() {
 
     return "tile.pyrotech.dense_quartz_ore";
   }

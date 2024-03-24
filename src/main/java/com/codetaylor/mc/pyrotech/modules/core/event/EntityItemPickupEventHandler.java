@@ -44,7 +44,7 @@ public class EntityItemPickupEventHandler {
       return;
     }
 
-    String resourceDomain = registryName.getResourceDomain();
+    String resourceDomain = registryName.getNamespace();
 
     if (ModuleCore.MOD_ID.equals(resourceDomain)) {
       AdvancementTriggers.MOD_ITEM_TRIGGER.trigger((EntityPlayerMP) entityPlayer);

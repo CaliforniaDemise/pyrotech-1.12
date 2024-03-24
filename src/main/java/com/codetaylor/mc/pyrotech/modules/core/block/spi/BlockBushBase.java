@@ -190,7 +190,7 @@ public abstract class BlockBushBase
 
   @Nonnull
   @Override
-  public EnumPushReaction getMobilityFlag(@Nonnull IBlockState blockState) {
+  public EnumPushReaction getPushReaction(@Nonnull IBlockState blockState) {
 
     switch (this.getAge(blockState)) {
       case 0:

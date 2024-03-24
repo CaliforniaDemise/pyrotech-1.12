@@ -69,7 +69,7 @@ public class BlockBloom
   // This can absolutely return null.
   @SuppressWarnings("NullableProblems")
   @Override
-  public CreativeTabs getCreativeTabToDisplayOn() {
+  public CreativeTabs getCreativeTab() {
 
     return null;
   }
@@ -356,7 +356,7 @@ public class BlockBloom
       }
 
       if (blockState.getBlock() == Blocks.TNT) {
-        Blocks.TNT.onBlockDestroyedByPlayer(world, pos, blockState.withProperty(BlockTNT.EXPLODE, true));
+        Blocks.TNT.onPlayerDestroy(world, pos, blockState.withProperty(BlockTNT.EXPLODE, true));
       }
     }
   }

@@ -18,6 +18,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class PitKilnRecipesAdd {
 
@@ -221,7 +222,7 @@ public class PitKilnRecipesAdd {
               ItemMaterial.EnumType.POTTERY_SHARD.asStack(),
               ItemMaterial.EnumType.POTTERY_FRAGMENTS.asStack()
           }
-      ).setRegistryName(ModuleTechBasic.MOD_ID, output.getItem().getRegistryName().getResourcePath()));
+      ).setRegistryName(ModuleTechBasic.MOD_ID, Objects.requireNonNull(output.getItem().getRegistryName()).getPath()));
     }
   }
 }

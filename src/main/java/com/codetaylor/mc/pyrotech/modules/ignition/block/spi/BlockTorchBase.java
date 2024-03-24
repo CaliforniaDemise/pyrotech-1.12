@@ -133,8 +133,8 @@ public abstract class BlockTorchBase
 
       if (enumfacing.getAxis().isHorizontal()) {
         EnumFacing enumfacing1 = enumfacing.getOpposite();
-        world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x + 0.17D * (double) enumfacing1.getFrontOffsetX(), y + 0.22D, z + 0.17D * (double) enumfacing1.getFrontOffsetZ(), 0.0D, 0.0D, 0.0D);
-        world.spawnParticle(EnumParticleTypes.FLAME, x + 0.17D * (double) enumfacing1.getFrontOffsetX(), y + 0.22D, z + 0.17D * (double) enumfacing1.getFrontOffsetZ(), 0.0D, 0.0D, 0.0D);
+        world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x + 0.17D * (double) enumfacing1.getXOffset(), y + 0.22D, z + 0.17D * (double) enumfacing1.getZOffset(), 0.0D, 0.0D, 0.0D);
+        world.spawnParticle(EnumParticleTypes.FLAME, x + 0.17D * (double) enumfacing1.getXOffset(), y + 0.22D, z + 0.17D * (double) enumfacing1.getZOffset(), 0.0D, 0.0D, 0.0D);
 
       } else {
         world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x, y, z, 0.0D, 0.0D, 0.0D);
@@ -182,7 +182,7 @@ public abstract class BlockTorchBase
   }
 
   @Override
-  public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState state, Entity entity) {
+  public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 
     if (state.getValue(BlockTorchBase.TYPE) == EnumType.LIT) {
 

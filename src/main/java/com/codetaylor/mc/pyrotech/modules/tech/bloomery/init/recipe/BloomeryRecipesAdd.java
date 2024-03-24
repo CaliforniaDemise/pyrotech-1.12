@@ -131,7 +131,7 @@ public class BloomeryRecipesAdd {
               .setSlagItem(new ItemStack(itemSlag), 2)
               .addFailureItem(new ItemStack(ModuleCore.Blocks.ROCK, 1, BlockRock.EnumType.STONE.getMeta()), 1)
               .addFailureItem(new ItemStack(ModuleTechBloomery.Items.SLAG, 1, 0), 2)
-              .setLangKey(langKey + ";" + itemSlag.getUnlocalizedName() + ".unique")
+              .setLangKey(langKey + ";" + itemSlag.getTranslationKey() + ".unique")
               .create()
       );
     }

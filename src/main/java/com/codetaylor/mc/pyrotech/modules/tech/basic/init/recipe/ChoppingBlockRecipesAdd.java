@@ -68,8 +68,8 @@ public class ChoppingBlockRecipesAdd {
       return;
     }
 
-    String recipeName = outputItemRegistryName.getResourceDomain() + "_" + outputItemRegistryName.getResourcePath() + "_" + outputItemStack.getMetadata()
-        + "_from_" + inputItemRegistryName.getResourceDomain() + "_" + inputItemRegistryName.getResourcePath() + "_" + inputItemStack.getMetadata();
+    String recipeName = outputItemRegistryName.getNamespace() + "_" + outputItemRegistryName.getPath() + "_" + outputItemStack.getMetadata()
+        + "_from_" + inputItemRegistryName.getNamespace() + "_" + inputItemRegistryName.getPath() + "_" + inputItemStack.getMetadata();
 
     registry.register(new ChoppingBlockRecipe(
         outputItemStack,

@@ -120,8 +120,8 @@ public final class CompatInitializerWood {
       return;
     }
 
-    String inputResourcePath = inputRegistryName.getResourcePath();
-    String inputResourceDomain = inputRegistryName.getResourceDomain();
+    String inputResourcePath = inputRegistryName.getPath();
+    String inputResourceDomain = inputRegistryName.getNamespace();
 
     ResourceLocation outputRegistryName = output.getItem().getRegistryName();
 
@@ -129,8 +129,8 @@ public final class CompatInitializerWood {
       return;
     }
 
-    String outputResourcePath = outputRegistryName.getResourcePath();
-    String outputResourceDomain = outputRegistryName.getResourceDomain();
+    String outputResourcePath = outputRegistryName.getPath();
+    String outputResourceDomain = outputRegistryName.getNamespace();
 
     String inputString = inputResourceDomain + ":" + inputResourcePath + ":" + input.getMetadata();
 

@@ -225,7 +225,7 @@ public abstract class BloomeryRecipeBase<T extends BloomeryRecipeBase<T>>
       return "error.missing.lang.key";
     }
 
-    return matchingStacks[0].getUnlocalizedName();
+    return matchingStacks[0].getTranslationKey();
   }
 
   public static class FailureItem {

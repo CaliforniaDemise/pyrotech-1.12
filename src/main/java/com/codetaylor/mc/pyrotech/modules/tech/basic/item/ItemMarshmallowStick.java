@@ -123,7 +123,7 @@ public class ItemMarshmallowStick
 
   @Nonnull
   @Override
-  public String getUnlocalizedName(ItemStack stack) {
+  public String getTranslationKey(ItemStack stack) {
 
     EnumType type = ItemMarshmallowStick.getType(stack);
 
@@ -137,7 +137,7 @@ public class ItemMarshmallowStick
       return "item.pyrotech.marshmallow.on.stick.roasted";
     }
 
-    return super.getUnlocalizedName(stack);
+    return super.getTranslationKey(stack);
   }
 
   @Override

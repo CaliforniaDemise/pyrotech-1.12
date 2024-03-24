@@ -1,0 +1,37 @@
+repositories {
+  // patchouli
+  maven { url 'https://maven.blamejared.com' }
+
+  maven { // TOP
+    name 'tterrag maven'
+    url "https://maven.tterrag.com/"
+  }
+
+  repositories {
+    exclusiveContent {
+      forRepository {
+        maven {
+          url "https://cursemaven.com"
+        }
+      }
+      filter {
+        includeGroup "curse.maven"
+      }
+    }
+  }
+}
+
+dependencies {
+  implementation rfg.deobf("curse.maven:hei-557549:5154770")
+  compileOnly "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.698"
+
+  compileOnly "curse.maven:patchouli-905159:5201041"
+
+  implementation "curse.maven:athenaeum-284350:4633750"
+  implementation "curse.maven:dropt-284973:3758733"
+
+  compileOnly rfg.deobf("curse.maven:hwyla-253449:2568751")
+  compileOnly rfg.deobf("mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.28-17")
+
+  compileOnly "curse.maven:gamestages-268655:2951840"
+}

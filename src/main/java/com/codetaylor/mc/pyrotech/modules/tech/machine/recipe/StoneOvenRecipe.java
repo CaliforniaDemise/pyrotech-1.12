@@ -95,7 +95,7 @@ public class StoneOvenRecipe
 
   private static String getRecipeKey(ItemStack itemStack) {
 
-    return itemStack.getItem().getUnlocalizedName() + ":" + itemStack.getItemDamage();
+    return itemStack.getItem().getTranslationKey() + ":" + itemStack.getItemDamage();
   }
 
   public static boolean removeRecipes(Ingredient output) {

@@ -185,9 +185,9 @@ public class BlockBarrel
   // ---------------------------------------------------------------------------
 
   @Override
-  public CreativeTabs getCreativeTabToDisplayOn() {
+  public CreativeTabs getCreativeTab() {
 
-    return (this.isSealed()) ? null : super.getCreativeTabToDisplayOn();
+    return (this.isSealed()) ? null : super.getCreativeTab();
   }
 
   // ---------------------------------------------------------------------------

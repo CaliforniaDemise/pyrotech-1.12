@@ -185,7 +185,7 @@ public class ZenChoppingBlock {
 
           List<StoneSawmillRecipe> stoneSawmillRecipes = StoneSawmillRecipesAdd.registerSawmillRecipeWood(
               ModuleTechMachine.Registries.STONE_SAWMILL_RECIPES,
-              "chopping_block/" + registryName.getResourcePath(),
+              "chopping_block/" + registryName.getPath(),
               recipe.getOutput(),
               recipe.getInput(),
               ModuleTechMachineConfig.STONE_SAWMILL.INHERITED_CHOPPING_BLOCK_RECIPE_DURATION_MODIFIER

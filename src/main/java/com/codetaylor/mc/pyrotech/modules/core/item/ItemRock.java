@@ -23,7 +23,7 @@ public class ItemRock
 
   @Nonnull
   @Override
-  public String getUnlocalizedName(ItemStack stack) {
+  public String getTranslationKey(ItemStack stack) {
 
     return "tile." + ModuleCore.MOD_ID + "." + BlockRock.EnumType.fromMeta(stack.getMetadata()).getName();
   }

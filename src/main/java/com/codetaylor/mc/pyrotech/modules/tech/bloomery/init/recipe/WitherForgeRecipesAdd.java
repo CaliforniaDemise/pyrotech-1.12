@@ -55,7 +55,7 @@ public class WitherForgeRecipesAdd {
         .setBloomYield(8, 12)
         .setSlagItem(new ItemStack(ModuleTechBloomery.Items.SLAG), 2)
         .setAnvilTiers(new AnvilRecipe.EnumTier[]{AnvilRecipe.EnumTier.IRONCLAD})
-        .setLangKey(Blocks.OBSIDIAN.getUnlocalizedName())
+        .setLangKey(Blocks.OBSIDIAN.getTranslationKey())
         .create());
   }
 
