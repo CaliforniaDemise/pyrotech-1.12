@@ -217,7 +217,7 @@ public class TileMechanicalMulchSpreader
       return blockState.getValue(Properties.FACING_HORIZONTAL);
     }
 
-    return ITileInteractable.super.getTileFacing(world, pos, blockState);
+    return super.getTileFacing(world, pos, blockState);
   }
 
   @Override
