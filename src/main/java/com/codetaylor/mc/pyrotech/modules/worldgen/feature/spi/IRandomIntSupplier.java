@@ -4,6 +4,6 @@ import java.util.Random;
 
 public interface IRandomIntSupplier {
 
-  int get(Random random);
+    int get(Random random);
 
 }
