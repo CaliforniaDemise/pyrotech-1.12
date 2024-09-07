@@ -6,6 +6,7 @@ import com.codetaylor.mc.pyrotech.modules.hunting.capability.CapabilitySpear;
 import com.codetaylor.mc.pyrotech.modules.hunting.capability.ISpearEntityData;
 import com.codetaylor.mc.pyrotech.modules.hunting.entity.EntitySpear;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -61,39 +62,43 @@ public class LayerSpear
 //      double eY = entity.lastTickPosY + (entity.posY - entity.lastTickPosY) * (double) partialTicks;
 //      double eZ = entity.lastTickPosZ + (entity.posZ - entity.lastTickPosZ) * (double) partialTicks;
 
-      for (int j = 0; j < data.getItemStackCount(); ++j) {
+      ModelBase model = entityRender.getMainModel();
 
-        ModelRenderer modelrenderer = entityRender.getMainModel().getRandomModelBox(random);
-        ModelBox modelbox = modelrenderer.cubeList.get(random.nextInt(modelrenderer.cubeList.size()));
+      if (!model.boxList.isEmpty()) {
+        for (int j = 0; j < data.getItemStackCount(); ++j) {
 
-        GlStateManager.pushMatrix();
-        {
-          float rX = random.nextFloat();
-          float rY = random.nextFloat();
-          float rZ = random.nextFloat();
+          ModelRenderer modelrenderer = model.getRandomModelBox(random);
+          ModelBox modelbox = modelrenderer.cubeList.get(random.nextInt(modelrenderer.cubeList.size()));
 
-          float x = (modelbox.posX1 + (modelbox.posX2 - modelbox.posX1) * rX) / 16;
-          float y = (modelbox.posY1 + (modelbox.posY2 - modelbox.posY1) * rY) / 16;
-          float z = (modelbox.posZ1 + (modelbox.posZ2 - modelbox.posZ1) * rZ) / 16;
+          GlStateManager.pushMatrix();
+          {
+            float rX = random.nextFloat();
+            float rY = random.nextFloat();
+            float rZ = random.nextFloat();
 
-          GlStateManager.translate(x, y, z);
+            float x = (modelbox.posX1 + (modelbox.posX2 - modelbox.posX1) * rX) / 16;
+            float y = (modelbox.posY1 + (modelbox.posY2 - modelbox.posY1) * rY) / 16;
+            float z = (modelbox.posZ1 + (modelbox.posZ2 - modelbox.posZ1) * rZ) / 16;
+
+            GlStateManager.translate(x, y, z);
 //          GlStateManager.translate(x + eX - pX, y + eY - pY, z + eZ - pZ);
 //          GlStateManager.rotate(45, 1, 0, 0);
 
-          rX = (rX * 2 - 1) * -1;
-          rY = (rY * 2 - 1) * -1;
-          rZ = (rZ * 2 - 1) * -1;
+//            rX = (rX * 2 - 1) * -1;
+//            rY = (rY * 2 - 1) * -1;
+//            rZ = (rZ * 2 - 1) * -1;
+//
+//            float distance = MathHelper.sqrt(rX * rX + rZ * rZ);
 
-          float distance = MathHelper.sqrt(rX * rX + rZ * rZ);
+            itemEntity.rotationYaw = random.nextFloat() * 360;//(float) (Math.atan2(rX, rZ) * MathConstants.RAD_TO_DEG);
+            itemEntity.rotationPitch = 45;//(float) (Math.atan2(rY, distance) * MathConstants.RAD_TO_DEG);
+            itemEntity.prevRotationYaw = itemEntity.rotationYaw;
+            itemEntity.prevRotationPitch = itemEntity.rotationPitch;
 
-          itemEntity.rotationYaw = random.nextFloat() * 360;//(float) (Math.atan2(rX, rZ) * MathConstants.RAD_TO_DEG);
-          itemEntity.rotationPitch = 45;//(float) (Math.atan2(rY, distance) * MathConstants.RAD_TO_DEG);
-          itemEntity.prevRotationYaw = itemEntity.rotationYaw;
-          itemEntity.prevRotationPitch = itemEntity.rotationPitch;
-
-          renderManager.renderEntity(itemEntity, 0, 0, 0, 0, partialTicks, true);
+            renderManager.renderEntity(itemEntity, 0, 0, 0, 0, partialTicks, true);
+          }
+          GlStateManager.popMatrix();
         }
-        GlStateManager.popMatrix();
       }
 
       RenderHelper.enableStandardItemLighting();
