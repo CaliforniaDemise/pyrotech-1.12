@@ -501,6 +501,7 @@ public class TileBloomery
 
       float increment = (1.0f / this.currentRecipe.getTimeTicks()) * this.speed.get();
       float recipeProgress = this.recipeProgress.add(increment);
+      this.world.updateComparatorOutputLevel(this.pos, this.blockType);
 
       {
         int slag = this.currentRecipe.getSlagCount() * this.inputStackHandler.getStackInSlot(0).getCount();
@@ -547,6 +548,15 @@ public class TileBloomery
         this.updateAirflow();
       }
     }
+  }
+
+  public int getComparatorLevels() {
+    int output = 0;
+    if (this.currentRecipe != null && this.fuelCount.get() != 0) output = 1;
+    if (this.active.get()) {
+      return output + (int) (this.recipeProgress.get() * 14F);
+    }
+    return output;
   }
 
   protected void spawnDrip(Random rand, EnumFacing facing) {

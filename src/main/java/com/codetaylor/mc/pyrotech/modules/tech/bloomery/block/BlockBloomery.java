@@ -271,6 +271,23 @@ public class BlockBloomery
     super.onEntityWalk(world, pos, entity);
   }
 
+  @SuppressWarnings("deprecation")
+  @Override
+  public boolean hasComparatorInputOverride(@Nonnull IBlockState state) {
+    return true;
+  }
+
+  @SuppressWarnings("deprecation")
+  @Override
+  @ParametersAreNonnullByDefault
+  public int getComparatorInputOverride(IBlockState blockState, World worldIn, BlockPos pos) {
+    TileEntity te = worldIn.getTileEntity(pos);
+    if (te != null) {
+      return ((TileBloomery) te).getComparatorLevels();
+    }
+    return super.getComparatorInputOverride(blockState, worldIn, pos);
+  }
+
   protected double getEntityWalkBurnDamage() {
 
     return ModuleTechBloomeryConfig.BLOOMERY.ENTITY_WALK_BURN_DAMAGE;
