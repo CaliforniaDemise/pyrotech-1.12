@@ -24,9 +24,10 @@ public class ModuleBucketConfig {
 
     @Config.Comment({
         "Set the number of times the bucket can be drained.",
-        "Default: " + 8
+        "Set it 0 to make bucket not damageable.",
+        "Default: 8",
     })
-    @Config.RangeInt(min = 1, max = Short.MAX_VALUE)
+    @Config.RangeInt(min = 0, max = Short.MAX_VALUE)
     public int MAX_DURABILITY = 8;
 
     @Config.Comment({
@@ -104,9 +105,10 @@ public class ModuleBucketConfig {
 
     @Config.Comment({
         "Set the number of times the bucket can be drained.",
-        "Default: " + 12
+        "Set it to 0 to make bucket not damageable.",
+        "Default: 12"
     })
-    @Config.RangeInt(min = 1, max = Short.MAX_VALUE)
+    @Config.RangeInt(min = 0, max = Short.MAX_VALUE)
     public int MAX_DURABILITY = 12;
 
     @Config.Comment({
@@ -184,7 +186,8 @@ public class ModuleBucketConfig {
 
     @Config.Comment({
         "Set the number of times the bucket can be drained.",
-        "Default: " + 16
+        "Set it to 0 to make bucket not damageable.",
+        "Default: 16"
     })
     @Config.RangeInt(min = 1, max = Short.MAX_VALUE)
     public int MAX_DURABILITY = 16;
@@ -264,7 +267,8 @@ public class ModuleBucketConfig {
 
     @Config.Comment({
         "Set the number of times the bucket can be drained.",
-        "Default: " + 24
+        "Set it to zero to make bucket not damageable.",
+        "Default: 24"
     })
     @Config.RangeInt(min = 1, max = Short.MAX_VALUE)
     public int MAX_DURABILITY = 24;

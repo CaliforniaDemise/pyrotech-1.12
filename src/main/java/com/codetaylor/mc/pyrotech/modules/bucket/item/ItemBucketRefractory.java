@@ -56,6 +56,11 @@ public class ItemBucketRefractory
   }
 
   @Override
+  protected boolean isBucketDamageable() {
+    return ModuleBucketConfig.BUCKET_REFRACTORY.MAX_DURABILITY != 0 && (ModuleBucketConfig.BUCKET_REFRACTORY.FULL_CONTAINER_DAMAGE_PER_SECOND != 0 || ModuleBucketConfig.BUCKET_REFRACTORY.HOT_CONTAINER_DAMAGE_PER_SECOND != 0);
+  }
+
+  @Override
   protected boolean isCowMilkDisabled() {
 
     return !ModuleBucketConfig.BUCKET_REFRACTORY.ENABLE_COW_MILK;

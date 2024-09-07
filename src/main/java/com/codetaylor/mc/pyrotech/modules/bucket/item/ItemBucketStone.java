@@ -56,6 +56,11 @@ public class ItemBucketStone
   }
 
   @Override
+  protected boolean isBucketDamageable() {
+    return ModuleBucketConfig.BUCKET_STONE.MAX_DURABILITY != 0 && (ModuleBucketConfig.BUCKET_STONE.FULL_CONTAINER_DAMAGE_PER_SECOND != 0 || ModuleBucketConfig.BUCKET_STONE.HOT_CONTAINER_DAMAGE_PER_SECOND != 0);
+  }
+
+  @Override
   protected boolean isCowMilkDisabled() {
 
     return !ModuleBucketConfig.BUCKET_STONE.ENABLE_COW_MILK;

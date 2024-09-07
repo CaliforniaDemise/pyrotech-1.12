@@ -57,6 +57,11 @@ public class ItemBucketWood
   }
 
   @Override
+  protected boolean isBucketDamageable() {
+    return ModuleBucketConfig.BUCKET_WOOD.MAX_DURABILITY != 0 && (ModuleBucketConfig.BUCKET_WOOD.FULL_CONTAINER_DAMAGE_PER_SECOND != 0 || ModuleBucketConfig.BUCKET_WOOD.HOT_CONTAINER_DAMAGE_PER_SECOND != 0);
+  }
+
+  @Override
   protected boolean isCowMilkDisabled() {
 
     return !ModuleBucketConfig.BUCKET_WOOD.ENABLE_COW_MILK;

@@ -534,6 +534,8 @@ public abstract class ItemBucketBase
 
   protected abstract int getFullContainerDamagePerSecond();
 
+  protected abstract boolean isBucketDamageable();
+
   public boolean isBroken(ItemStack itemStack) {
 
     return this.getDurability(itemStack) <= 0;
@@ -545,6 +547,7 @@ public abstract class ItemBucketBase
   }
 
   public void setDurability(ItemStack itemStack, int durability) {
+    if (!this.isBucketDamageable()) return;
 
     NBTTagCompound tag = itemStack.getTagCompound();
 

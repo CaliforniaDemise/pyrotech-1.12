@@ -56,6 +56,11 @@ public class ItemBucketClay
   }
 
   @Override
+  protected boolean isBucketDamageable() {
+    return ModuleBucketConfig.BUCKET_CLAY.MAX_DURABILITY != 0 && (ModuleBucketConfig.BUCKET_CLAY.FULL_CONTAINER_DAMAGE_PER_SECOND != 0 || ModuleBucketConfig.BUCKET_CLAY.HOT_CONTAINER_DAMAGE_PER_SECOND != 0);
+  }
+
+  @Override
   protected boolean isCowMilkDisabled() {
 
     return !ModuleBucketConfig.BUCKET_CLAY.ENABLE_COW_MILK;
