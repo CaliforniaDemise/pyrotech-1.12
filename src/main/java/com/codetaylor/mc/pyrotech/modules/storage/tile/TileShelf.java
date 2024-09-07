@@ -244,6 +244,11 @@ public class TileShelf
 
       return new Vec3d(0, 0.125, 0);
     }
+
+    @Override
+    public boolean shouldRenderAdditivePassForStackInSlot(boolean sneaking, ItemStack heldItemMainHand) {
+      return heldItemMainHand.isEmpty() || !sneaking;
+    }
   }
 
   // ---------------------------------------------------------------------------

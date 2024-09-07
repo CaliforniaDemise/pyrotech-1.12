@@ -748,7 +748,11 @@ public class TileWorktable
           )
       );
     }
-  }
+
+    @Override
+    public boolean shouldRenderAdditivePassForStackInSlot(boolean sneaking, ItemStack heldItemMainHand) {
+      return heldItemMainHand.isEmpty() || !sneaking;
+    }  }
 
 // ---------------------------------------------------------------------------
 // - Stack Handler

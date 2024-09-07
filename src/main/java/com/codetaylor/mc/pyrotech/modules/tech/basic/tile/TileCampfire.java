@@ -21,6 +21,7 @@ import com.codetaylor.mc.pyrotech.library.spi.tile.TileCombustionWorkerBase;
 import com.codetaylor.mc.pyrotech.modules.core.ModuleCore;
 import com.codetaylor.mc.pyrotech.modules.core.ModuleCoreConfig;
 import com.codetaylor.mc.pyrotech.modules.core.item.ItemMaterial;
+import com.codetaylor.mc.pyrotech.modules.ignition.item.ItemIgniterBase;
 import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasic;
 import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasicConfig;
 import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockCampfire;
@@ -37,6 +38,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -859,7 +861,7 @@ public class TileCampfire
 
       ItemStack heldItem = player.getHeldItemMainhand();
 
-      if ((type == EnumType.MouseClick && heldItem.isEmpty())
+      if ((type == EnumType.MouseClick && !this.isItemStackValid(heldItem))
           || type == EnumType.MouseWheelDown) {
 
         // If the player is sneaking with an empty hand, or it's a mouse wheel
@@ -933,6 +935,17 @@ public class TileCampfire
     public boolean renderAdditivePass(World world, RenderItem renderItem, EnumFacing hitSide, Vec3d hitVec, BlockPos hitPos, IBlockState blockState, ItemStack heldItemMainHand, float partialTicks) {
 
       return CampfireInteractionLogRenderer.INSTANCE.renderAdditivePass(this, world, renderItem, hitSide, hitVec, hitPos, blockState, heldItemMainHand, partialTicks);
+    }
+
+    @Override
+    public boolean shouldRenderAdditivePassForHeldItem(ItemStack heldItemMainHand) {
+      return this.isItemStackValid(heldItemMainHand);
+    }
+
+    @Override
+    public boolean shouldRenderAdditivePassForStackInSlot(boolean sneaking, ItemStack heldItemMainHand) {
+      Item item = heldItemMainHand.getItem();
+      return !this.isItemStackValid(heldItemMainHand) && !(item instanceof ItemIgniterBase) && item != Items.FLINT_AND_STEEL && item != Items.FIRE_CHARGE;
     }
   }
 
