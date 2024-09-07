@@ -331,6 +331,12 @@ public class BlockKilnPit
     super.getDrops(drops, world, pos, state, fortune);
   }
 
+  @Nullable
+  @Override
+  public String getHarvestTool(IBlockState state) {
+    return state.getValue(VARIANT) == EnumType.COMPLETE ? "shovel" : super.getHarvestTool(state);
+  }
+
   // ---------------------------------------------------------------------------
   // - Variants
   // ---------------------------------------------------------------------------
