@@ -949,8 +949,16 @@ public class TileBloomery
 
     @Override
     public boolean interact(EnumType type, TileBloomery tile, World world, BlockPos hitPos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing hitSide, float hitX, float hitY, float hitZ) {
+      ItemStack stack = player.getHeldItem(hand);
+      if (stack.isEmpty() || !(StackHelper.isFuel(stack) && !stack.getItem().hasContainerItem(stack))) {
+        return super.interact(type, tile, world, hitPos, state, player, hand, hitSide, hitX, hitY, hitZ);
+      }
+      return false;
+    }
 
-      return super.interact(type, tile, world, hitPos, state, player, hand, hitSide, hitX, hitY, hitZ);
+    @Override
+    public boolean shouldRenderAdditivePassForStackInSlot(boolean sneaking, ItemStack heldItemMainHand) {
+      return sneaking || heldItemMainHand.isEmpty() || !(StackHelper.isFuel(heldItemMainHand) && !heldItemMainHand.getItem().hasContainerItem(heldItemMainHand));
     }
   }
 

@@ -125,10 +125,6 @@ public class InteractionItemStack <T extends TileEntity & ITileInteractable> ext
                     itemStackToInsert = alternateItemStack;
                 }
 
-                if (!this.isItemStackValid(itemStackToInsert)) {
-                    return false;
-                }
-
                 int count = itemStackToInsert.getCount();
                 ItemStack itemStack = itemStackToInsert.copy();
                 int insertItemCount = this.getInsertItemCount(type, itemStack);
@@ -179,7 +175,7 @@ public class InteractionItemStack <T extends TileEntity & ITileInteractable> ext
 
     protected void onExtract(IInteraction.EnumType type, World world, EntityPlayer player, BlockPos pos) {
         if (!world.isRemote && type == EnumType.MouseClick) {
-            world.playSound((EntityPlayer)null, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 0.25F, (float)(1.0 + RandomHelper.random().nextGaussian() * 0.4000000059604645));
+            world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 0.25F, (float)(1.0 + RandomHelper.random().nextGaussian() * 0.4000000059604645));
         }
 
     }
