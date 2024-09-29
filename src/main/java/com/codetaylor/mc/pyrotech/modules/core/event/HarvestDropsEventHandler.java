@@ -1,14 +1,12 @@
 package com.codetaylor.mc.pyrotech.modules.core.event;
 
-import com.codetaylor.mc.athenaeum.util.OreDictHelper;
 import com.codetaylor.mc.athenaeum.util.RandomHelper;
-import com.codetaylor.mc.pyrotech.modules.core.ModuleCore;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
@@ -30,28 +28,7 @@ public class HarvestDropsEventHandler {
       World world = event.getWorld();
       EntityPlayer harvester = event.getHarvester();
 
-      ItemStack itemStack;
-
-      try {
-        // 2019-23-07 (#139) We wrap this in a try / catch because we can't
-        // assume that other mods will always come correct.
-        itemStack = block.getItem(world, pos, state);
-
-      } catch (Exception e) {
-        ResourceLocation registryName = block.getRegistryName();
-
-        if (registryName != null) {
-          ModuleCore.LOGGER.error(String.format(
-              "A mod [%s] threw an exception when calling getItem on a block [%s]",
-              registryName.getNamespace(),
-              registryName
-          ), e);
-        }
-        return;
-      }
-
-      if (OreDictHelper.contains("treeLeaves", itemStack)) {
-
+      if (block instanceof BlockLeaves) {
         if (harvester == null) {
 
           // lower chance for sticks if not broken by player
@@ -65,7 +42,6 @@ public class HarvestDropsEventHandler {
           }
         }
       }
-
     }
   }
 
